@@ -22,7 +22,7 @@ class ContactAdapter(val contactList: MutableList<ContactDataClass>)
         holder.binding.tvName.text=contactList[position].name
         holder.binding.tvPhonenumber.text= contactList[position].phone_number
     }
-    
+
 
     override fun getItemCount(): Int =contactList.size
 }
