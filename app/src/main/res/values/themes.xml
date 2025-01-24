@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.RouteContactAPP" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/purple1</item>
+        <item name="colorSecondary">@color/purple2</item>
+        <item name="colorError">@color/red</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="Theme.RouteContactAPP" parent="Base.Theme.RouteContactAPP" >
+        <item name="colorPrimary">@color/purple1</item>
+        <item name="colorSecondary">@color/purple2</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="TextInputEditText">
+        <item name="android:textSize">25sp</item>
+        <item name="color">?attr/colorSecondary</item>
+        <item name="android:gravity">left</item>
+    </style>
+</resources>
