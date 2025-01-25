@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private fun initViews() {
         adapter=ContactAdapter(mutableListOf())
         binding.btnSave.setOnClickListener{it-> addSaveBtnLogic()}
-
     }
 
     private fun addSaveBtnLogic() {
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             validationName=true
         }
 
-        if(binding.tilPhoneNumber.editText?.text==null){
+        if(binding.tilPhoneNumber.editText?.text?.isEmpty() == true){
             binding.tilPhoneNumber.error= Error_message1
         }else if(binding.tilPhoneNumber.editText?.text?.length!! <11){
             binding.tilPhoneNumber.error= Error_message1
@@ -58,6 +57,7 @@ class MainActivity : AppCompatActivity() {
             binding.tilPhoneNumber.editText?.text?.clear()
             binding.tilDescription.editText?.text?.clear()
         }
+
     }
 
     companion object{
