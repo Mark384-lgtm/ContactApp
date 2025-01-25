@@ -20,12 +20,18 @@ class ContactDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
         getExtraContact()
         viewbinding()
-        addbackBtnLogic()
+        addbackBtn()
+    }
+
+    private fun addbackBtn() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
     }
 
-    private fun addbackBtnLogic() {
-        binding.backBtn.setOnClickListener{finish()}
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)

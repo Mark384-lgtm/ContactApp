@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.RouteContactAPP" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.RouteContactAPP" parent="Theme.Material3.DayNight">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/purple1</item>
         <item name="colorSecondary">@color/purple2</item>
@@ -12,6 +12,10 @@
         <item name="colorPrimary">@color/purple1</item>
         <item name="colorSecondary">@color/purple2</item>
         <item name="android:statusBarColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="AppBarTheme">
+        <item name="color">?attr/colorSecondary</item>
     </style>
 
     <style name="TextInputEditText">

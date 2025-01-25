@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private fun addSaveBtnLogic() {
         var validationName:Boolean=false
         var validationPhoneNumber:Boolean=false
+
         if(binding.tilName.editText?.text?.length==0){
             binding.tilName.error= Error_message1
         }else if(binding.tilName.editText?.text?.length!! in 1..2){
