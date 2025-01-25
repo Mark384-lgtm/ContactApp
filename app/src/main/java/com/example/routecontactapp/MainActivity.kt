@@ -1,5 +1,6 @@
 package com.example.routecontactapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.routecontactapp.databinding.ActivityMainBinding
@@ -8,17 +9,29 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     lateinit var adapter:ContactAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initViews()
-        binding.rvContacts.adapter=adapter
+
     }
 
     private fun initViews() {
         adapter=ContactAdapter(mutableListOf())
         binding.btnSave.setOnClickListener{it-> addSaveBtnLogic()}
+        addContactItemlogic()
+        binding.rvContacts.adapter=adapter
+    }
+
+    private fun addContactItemlogic() {
+        adapter.onItemClickListener=ContactAdapter.OnItemClickListener{position, contact ->
+            intent= Intent(this,ContactDetailsActivity::class.java)
+            intent.putExtra(ContactDetailsActivity.Extra_position,position)
+            intent.putExtra(ContactDetailsActivity.Extra_contatct,contact)
+            startActivity(intent)
+        }
     }
 
     private fun addSaveBtnLogic() {
@@ -61,8 +74,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object{
-         const val Error_message1="Required"
+        const val Error_message1="Required"
         const val Error_message2="Name must be of 3 char or more"
     }
+
+
 }
 
