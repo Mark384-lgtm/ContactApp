@@ -9,5 +9,5 @@ data class ContactDataClass(
     val avatarID:Int,
     val name:String,
     val phone_number:String,
-    val description:String?
+    val description:String?=null
 ):Parcelable

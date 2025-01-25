@@ -13,12 +13,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initViews()
-
+        binding.rvContacts.adapter=adapter
     }
 
     private fun initViews() {
         adapter=ContactAdapter(mutableListOf())
         binding.btnSave.setOnClickListener{it-> addSaveBtnLogic()}
+
     }
 
     private fun addSaveBtnLogic() {
@@ -51,7 +52,11 @@ class MainActivity : AppCompatActivity() {
                 description = binding.tilDescription.editText?.text.toString()
             )
             adapter.contactList.add(contact)
-            binding.rvContacts.adapter=adapter
+            adapter.notifyItemInserted(adapter.contactList.size-1)
+
+            binding.tilName.editText?.text?.clear()
+            binding.tilPhoneNumber.editText?.text?.clear()
+            binding.tilDescription.editText?.text?.clear()
         }
     }
 
