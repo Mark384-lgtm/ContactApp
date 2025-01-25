@@ -8,5 +8,6 @@ import kotlinx.parcelize.Parcelize
 data class ContactDataClass(
     val avatarID:Int,
     val name:String,
-    val phone_number:String
+    val phone_number:String,
+    val description:String?
 ):Parcelable

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.routecontactapp.databinding.ItemContactBinding
 
-class ContactAdapter(val contactList: MutableList<ContactDataClass>)
+class ContactAdapter(var contactList: MutableList<ContactDataClass>)
     :Adapter<ContactAdapter.ContactViewHolder>() {
     class ContactViewHolder(val binding:ItemContactBinding):ViewHolder(binding.root)
 
